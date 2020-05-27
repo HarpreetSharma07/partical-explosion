@@ -52,7 +52,7 @@ bool Screen::init() {
 	//RGBA value for a texture is 32-bit in size(each 1byte) so to store it in a block of memory
 	m_buffer = new Uint32[SCREEN_WIDTH * SCREEN_HEIGHT];
 
-	memset(m_buffer, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
+	//memset(m_buffer, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
 
 	return true;
 }
@@ -74,13 +74,13 @@ void Screen::setPixel(int x, int y, Uint8 red, Uint8 green, Uint8 blue)
 	Uint32 color = 0;
 
 
+	color +=  0xFF;
+	color <<= 8;
 	color += red;
 	color <<= 8;
 	color += green;
 	color <<= 8;
 	color += blue;
-	color <<= 8;
-	color += 0xFF;
 
 	m_buffer[(y * SCREEN_WIDTH) + x] = color;
 

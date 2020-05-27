@@ -1,0 +1,2 @@
+C:\gl\Project-0\Debug\Project-0.exe
+C:\gl\Project-0\Debug\Project-0.pdb

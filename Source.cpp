@@ -29,13 +29,19 @@ int main(int argc, char* argv[])
 
 		//SDL_GetTicks()->>
 		//it returns the number of millisec since the program starts
+		int elapsed = SDL_GetTicks();
+
+		//clearing particles from positions and then again updating them
+		screen.clear();
+		swarm.update();
+
+
+
 		//sin()->> it return values between -1 to 1
 		// unsigned char -> is used to get a value less than 255
 		//0.001 is multiplied with *elapsed* to return smooth values by sin function
 		//+1 ->> is added to get values between range(0-2)
 
-
-		int elapsed = SDL_GetTicks();
 		unsigned char green = (unsigned char)((1 + sin(elapsed * 0.001)) * 128);
 		unsigned char red = (unsigned char)((1 + sin(elapsed * 0.002)) * 128);
 		unsigned char blue = (unsigned char)((1 + sin(elapsed * 0.003)) * 128);
@@ -56,7 +62,8 @@ int main(int argc, char* argv[])
 			//position of a particle in x -axis and y-xis
 			//from 0 to screen width and height respect..
 			int x = (particle.m_x + 1) * Screen::SCREEN_WIDTH / 2;
-			int y = (particle.m_y + 1) * Screen::SCREEN_HEIGHT / 2;
+			int y = particle.m_y  * Screen::SCREEN_WIDTH/2 + Screen::SCREEN_HEIGHT/2;
+
 
 			screen.setPixel(x, y, red, green, blue);
 		}

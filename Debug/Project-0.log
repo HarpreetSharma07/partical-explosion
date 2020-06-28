@@ -1,8 +1,4 @@
 ﻿  Particle.cpp
-  Source.cpp
-C:\gl\Project-0\Source.cpp(14,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\gl\Project-0\Source.cpp(64,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\gl\Project-0\Source.cpp(65,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   Swarm.cpp
   Generating Code...
   Project-0.vcxproj -> C:\gl\Project-0\Debug\Project-0.exe

@@ -31,9 +31,8 @@ int main(int argc, char* argv[])
 		//it returns the number of millisec since the program starts
 		int elapsed = SDL_GetTicks();
 
-		//clearing particles from positions and then again updating them
-		screen.clear();
-		swarm.update();
+		//updating positions of particles  
+		swarm.update(elapsed);
 
 
 
@@ -68,7 +67,8 @@ int main(int argc, char* argv[])
 			screen.setPixel(x, y, red, green, blue);
 		}
 
-
+		//to blur the pixels
+		screen.boxBlur();
 
 
 		/*
